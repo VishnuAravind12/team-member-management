@@ -1,1 +1,11 @@
 pri.txt
+/backend/backend/__pycache__/
+/backend/members/__pycache__/
+backend/db.sqlite3
+
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore Django local database
+db.sqlite3

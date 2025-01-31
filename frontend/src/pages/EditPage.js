@@ -35,75 +35,78 @@ function EditPage() {
       },
       body: JSON.stringify(formData)
     })
-    .then(response => response.json())
-    .then(() => {
-      navigate('/');
-    })
-    .catch(err => console.error(err));
+    .then((response) => response.json())
+    .then(() => navigate('/'))
+    .catch((err) => console.error(err));
   };
 
   const handleDelete = () => {
     fetch(`http://127.0.0.1:8000/api/members/${id}/`, {
       method: 'DELETE',
     })
-    .then(() => {
-      navigate('/');
-    })
+    .then(() => navigate('/'))
     .catch(err => console.error(err));
   };
 
   return (
     <div>
-      <h2>Edit Team Member</h2>
+      <h2 className="mb-4">Edit Team Member</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name:</label>
+        <div className="mb-3">
+          <label className="form-label">First Name</label>
           <input
             type="text"
             name="first_name"
+            className="form-control"
             value={formData.first_name}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Last Name:</label>
+        <div className="mb-3">
+          <label className="form-label">Last Name</label>
           <input
             type="text"
             name="last_name"
+            className="form-control"
             value={formData.last_name}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Phone:</label>
+        <div className="mb-3">
+          <label className="form-label">Phone</label>
           <input
             type="text"
             name="phone_number"
+            className="form-control"
             value={formData.phone_number}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Email:</label>
+        <div className="mb-3">
+          <label className="form-label">Email</label>
           <input
             type="email"
             name="email"
+            className="form-control"
             value={formData.email}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Role:</label>
-          <select name="role" value={formData.role} onChange={handleChange}>
+        <div className="mb-3">
+          <label className="form-label">Role</label>
+          <select
+            name="role"
+            className="form-select"
+            value={formData.role}
+            onChange={handleChange}
+          >
             <option value="regular">Regular</option>
             <option value="admin">Admin</option>
           </select>
         </div>
-        <button type="submit">Save</button>
+        <button type="submit" className="btn btn-primary me-3">Save</button>
+        <button type="button" className="btn btn-danger" onClick={handleDelete}>Delete</button>
       </form>
-      <button onClick={handleDelete} style={{ marginTop: '20px', color: 'red' }}>
-        Delete
-      </button>
     </div>
   );
 }

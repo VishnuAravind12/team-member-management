@@ -27,62 +27,78 @@ function AddPage() {
       },
       body: JSON.stringify(formData)
     })
-    .then(response => response.json())
-    .then(() => {
-      // After successful add, navigate back to list
-      navigate('/');
-    })
-    .catch(err => console.error(err));
+    .then((response) => response.json())
+    .then(() => navigate('/'))
+    .catch((err) => console.error(err));
   };
 
   return (
     <div>
-      <h2>Add New Team Member</h2>
+      <h2 className="mb-4">Add New Team Member</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name:</label>
+        <div className="mb-3">
+          <label htmlFor="first_name" className="form-label">First Name</label>
           <input
             type="text"
+            id="first_name"
             name="first_name"
+            className="form-control"
             value={formData.first_name}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Last Name:</label>
+
+        <div className="mb-3">
+          <label htmlFor="last_name" className="form-label">Last Name</label>
           <input
             type="text"
+            id="last_name"
             name="last_name"
+            className="form-control"
             value={formData.last_name}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Phone:</label>
+
+        <div className="mb-3">
+          <label htmlFor="phone_number" className="form-label">Phone</label>
           <input
             type="text"
+            id="phone_number"
             name="phone_number"
+            className="form-control"
             value={formData.phone_number}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Email:</label>
+
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">Email</label>
           <input
             type="email"
+            id="email"
             name="email"
+            className="form-control"
             value={formData.email}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Role:</label>
-          <select name="role" value={formData.role} onChange={handleChange}>
+
+        <div className="mb-3">
+          <label htmlFor="role" className="form-label">Role</label>
+          <select
+            id="role"
+            name="role"
+            className="form-select"
+            value={formData.role}
+            onChange={handleChange}
+          >
             <option value="regular">Regular</option>
             <option value="admin">Admin</option>
           </select>
         </div>
-        <button type="submit">Save</button>
+
+        <button type="submit" className="btn btn-success">Save</button>
       </form>
     </div>
   );

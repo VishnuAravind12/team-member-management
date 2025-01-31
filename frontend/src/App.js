@@ -6,7 +6,7 @@ import EditPage from './pages/EditPage';
 
 function App() {
   return (
-    <div>
+    <div className="container mt-4">
       <Routes>
         <Route path="/" element={<ListPage />} />
         <Route path="/add" element={<AddPage />} />

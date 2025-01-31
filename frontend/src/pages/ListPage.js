@@ -13,14 +13,16 @@ function ListPage() {
 
   return (
     <div>
-      <h2>Team Members ({members.length})</h2>
-      <Link to="/add" style={{ textDecoration: 'none' }}>+ Add Member</Link>
-      <ul>
+      <h2 className="mb-4">Team Members <span className="text-muted">({members.length})</span></h2>
+      <div className="d-flex justify-content-end mb-3">
+        <Link to="/add" className="btn btn-primary">+ Add Member</Link>
+      </div>
+      <ul className="list-group">
         {members.map(member => (
-          <li key={member.id}>
-            <Link to={`/edit/${member.id}`}>
-              {member.first_name} {member.last_name} 
-              {member.role === 'admin' && ' (Admin)'}
+          <li key={member.id} className="list-group-item">
+            <Link to={`/edit/${member.id}`} className="text-decoration-none">
+              <strong>{member.first_name} {member.last_name}</strong>
+              {member.role === 'admin' && <span className="badge bg-danger ms-2">Admin</span>}
             </Link>
           </li>
         ))}

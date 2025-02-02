@@ -27,6 +27,15 @@ A simple full-stack application built with **Django** (using **Django REST Frame
 - **Python 3.8+** (or higher)
 - **Node.js 14+** (or higher) and **npm** for the React frontend
 
+   If you don't have Node.js and npm installed, follow these steps:
+   1. Visit [nodejs.org](https://nodejs.org/) and download the latest LTS version.
+   2. Install Node.js following the provided instructions.
+   3. Verify your installation by running the following commands in your terminal:
+      ```bash
+      node --version
+      npm --version
+      ```
+
 ---
 
 ## Backend Setup (Django)
@@ -93,13 +102,14 @@ A simple full-stack application built with **Django** (using **Django REST Frame
 
 1. **Open** [http://127.0.0.1:3000](http://127.0.0.1:3000) in your browser.
 2. **View** the list of team members (initially empty if you haven’t added any).
-3. **Click “+ Add Member”** to create a new member:
+3. **Search** the list of team members by the name of the memeber you aim to find.
+4. **Click “+ Add Member”** to create a new member:
    - Fill out first name, last name, phone number, email, and select a role (`regular` or `admin`).
    - Click “Save” to send a POST request to the API.
-4. **Edit a member** by clicking on the member’s name in the list:
+5. **Edit a member** by clicking on the member’s name in the list:
    - Make changes and click “Save” to update (PUT) the record.
    - Or click **Delete** to remove (DELETE) the record entirely.
-5. **Check the Django admin** (optional) at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) to see your team members in the `members` app.
+6. **Check the Django admin** (optional) at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) to see your team members in the `members` app.
 
 ---
 

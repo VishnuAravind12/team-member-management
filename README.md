@@ -6,6 +6,7 @@ A simple full-stack application built with **Django** (using **Django REST Frame
 - Add new team members.
 - Edit existing team members.
 - Delete team members.
+- Search for current team memebers.
 
 > **Note:** This README assumes you are running the backend on `localhost:8000` and the frontend on `localhost:3000`. Adjust as needed for your environment.
 
